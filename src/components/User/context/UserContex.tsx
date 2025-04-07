@@ -1,5 +1,5 @@
 import { createContext, ReactNode, useContext } from 'react';
-import { useUser } from '../hook/useUser';
+import { useUser } from './hook/useUser';
 
 interface UserData {
     [key: string]: any;

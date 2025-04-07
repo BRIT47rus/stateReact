@@ -1,19 +1,18 @@
-import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { queryGetData } from '../api/queryGetData';
 
-export const useUser = (userID: number) => {
+export const useRequest = (query: number | string) => {
     const [data, setData] = useState();
     const [error, setError] = useState(null);
     useEffect(() => {
-        axios
-            .get(`https://jsonplaceholder.typicode.com/users/${userID}`)
+        queryGetData(query)
             .then((response) => {
-                setData(response.data);
+                setData(response);
             })
             .catch((e) => {
                 setError(e);
             });
-    }, [userID]);
+    }, [query]);
 
     return {
         isLoading: !data && !error,
