@@ -1,0 +1,10 @@
+.listItem-container {
+    display: flex;
+    border-bottom: 1px dashed var(--color--secondary);
+}
+.listItem__name {
+    font-weight: 700;
+}
+.listItem__options {
+    flex: 1;
+}
