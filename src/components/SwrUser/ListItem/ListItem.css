@@ -8,3 +8,6 @@
 .listItem__options {
     flex: 1;
 }
+.complete {
+    background: var(--color--secondary);
+}
