@@ -1,11 +1,12 @@
 import useSWR from 'swr';
 
 export const useRequest = (requestUrl: string) => {
-    const { data, error, mutate } = useSWR(requestUrl);
+    const { data, error, mutate, isLoading } = useSWR(requestUrl);
     return {
-        isLoading: !data && !error,
+        // isLoading: !data && !error,
         data,
         mutate,
         error,
+        isLoading,
     };
 };

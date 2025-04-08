@@ -9,3 +9,16 @@
     font-size: 22px;
     /* height: 100vh; */
 }
+.users_btn {
+    position: fixed;
+    bottom: 20px;
+    left: 10px;
+    background: var(--color--secondary);
+    color: white;
+    font-weight: 700;
+}
+.users_btn:hover {
+    transition: all 0.4s linear;
+    bottom: 22px;
+    background: #000;
+}

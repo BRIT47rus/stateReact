@@ -1,5 +1,11 @@
-import { createContext, ReactNode, useContext, useState } from 'react';
-const USER_ID = 2;
+import {
+    createContext,
+    ReactNode,
+    useContext,
+    useEffect,
+    useState,
+} from 'react';
+
 interface AppContextProps {
     userId: number;
     setUserID: (id: number) => void;
@@ -10,8 +16,19 @@ export const useAppContext = () => {
     return useContext(AppContext);
 };
 
-export const AppContextProvider = ({ children }: { children: ReactNode }) => {
-    const [userId, setUserID] = useState(USER_ID);
+export const AppContextProvider = ({
+    children,
+    indexUser,
+}: {
+    children: ReactNode;
+    indexUser: number;
+}) => {
+    const [userId, setUserID] = useState(indexUser);
+    useEffect(() => {
+        if (userId) {
+            setUserID(indexUser);
+        }
+    }, [userId]);
 
     const value: AppContextProps = {
         userId,

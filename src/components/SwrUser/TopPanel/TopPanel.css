@@ -31,3 +31,25 @@
     flex: 1;
     height: 100%;
 }
+
+.topPanel__stats {
+    display: flex;
+    flex-direction: column;
+    background: var(--color--secondary);
+    border-radius: 4px;
+    box-shadow: 2px 2px 16px var(--color--secondary);
+    padding: var(--padding-size);
+    justify-content: start;
+    align-items: center;
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+}
+.topPanel__stats-todo > span {
+    color: var(--color--main);
+    font-size: 22px;
+}
+.topPanel__stats-update > span {
+    color: var(--color--main);
+    font-size: 22px;
+}
