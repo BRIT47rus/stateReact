@@ -1,10 +1,10 @@
 import './App.css';
-import { UserS } from './components/SwrUser';
+import { UsersR } from './components/ReactQuery';
 
 function App() {
     return (
         <div>
-            <UserS />
+            <UsersR />
         </div>
     );
 }

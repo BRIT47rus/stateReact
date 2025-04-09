@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './ListItem.css';
+import { useTodos } from '../contexts/hooks/useTodos';
 
 // {
 //     "userId": 2,
@@ -14,9 +15,11 @@ type ListItemProps = {
 };
 export const ListItem = ({ id, title, completed }: ListItemProps) => {
     const [toogleCompleted, setToogleComleted] = useState(completed);
+
     const onChangeComplete = () => {
         setToogleComleted((prev) => !prev);
     };
+
     const completedStyle = toogleCompleted ? 'complete' : 'green';
     return (
         <div className="listItem-container" onClick={onChangeComplete}>
