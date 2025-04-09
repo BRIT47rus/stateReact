@@ -25,10 +25,10 @@ export const AppContextProvider = ({
 }) => {
     const [userId, setUserID] = useState(indexUser);
     useEffect(() => {
-        if (userId) {
+        if (indexUser) {
             setUserID(indexUser);
         }
-    }, [userId]);
+    }, [indexUser]);
 
     const value: AppContextProps = {
         userId,
