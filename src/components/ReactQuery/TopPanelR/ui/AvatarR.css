@@ -1,0 +1,21 @@
+.avatar-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+}
+
+.avatar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100px;
+    min-width: 100px;
+    min-height: 100px;
+    border-radius: 50%;
+    border: 2px var(--color-mainR) solid;
+    background-color: var(--color-mainR);
+    color: var(--font-color-accent);
+    font-weight: 700;
+    flex: 1;
+}

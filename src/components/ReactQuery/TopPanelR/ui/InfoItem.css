@@ -1,0 +1,9 @@
+.info-item-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: var(--padding-main);
+    flex: 2;
+    border-left: 1px dashed var(--color-mainR);
+    margin-left: 100px;
+}

@@ -1,0 +1,8 @@
+.statsR-container {
+    display: flex;
+    flex-direction: column;
+    padding: var(--padding-main);
+    flex: 1;
+    box-shadow: 4px 4px 24px #002;
+    min-height: 100%;
+}
