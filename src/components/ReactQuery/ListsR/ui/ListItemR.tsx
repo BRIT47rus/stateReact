@@ -1,11 +1,12 @@
+import { Data } from '../../hooks/useTodosR';
 import './ListItemR.css';
 
-export const ListItemR = () => {
+export const ListItemR = ({ completed, id, title }: Data) => {
     return (
         <div className="list-itemR">
-            <span>1</span>
-            <span>title</span>
-            <span>выполнено</span>
+            <span>{id}</span>
+            <span>{title}</span>
+            <span>{completed ? 'выполнено' : 'невыполнено'}</span>
         </div>
     );
 };
