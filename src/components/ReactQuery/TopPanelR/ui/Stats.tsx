@@ -1,4 +1,3 @@
-import { useUserRContext } from '../../contexUser/AppContextUserR';
 import { useTime } from '../../hooks/useTime';
 import { useTodosR } from '../../hooks/useTodosR';
 import './Stats.css';
@@ -14,7 +13,6 @@ export const StatsR = () => {
     const dateNow = data ? data.toLocaleDateString() : '--';
     const timeNow = data ? new Date().toLocaleTimeString() : '--';
     const completedTodo = todos.filter((todo) => todo.completed === true);
-    console.log(completedTodo);
 
     return (
         <div className="statsR-container">
