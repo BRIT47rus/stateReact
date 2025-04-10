@@ -5,9 +5,13 @@ const queryFunTime = (): Promise<Date> =>
         resolve(new Date());
     });
 const OPTIONS = {
-    refreshInterval: 1000,
+    refreshInterval: 5000,
 };
 export const useTime = () => {
-    const { data } = useQuery('time', queryFunTime, OPTIONS);
-    return data;
+    const { data, isLoading } = useQuery({
+        queryKey: ['time'], // Ключ запроса теперь внутри объекта
+        queryFn: queryFunTime, // Функция запроса внутри объекта
+        ...OPTIONS, // Другие опции также внутри объекта (можно и напрямую)
+    });
+    return { data, isLoading };
 };

@@ -1,13 +1,32 @@
+import { useUserRContext } from '../../contexUser/AppContextUserR';
+import { useTime } from '../../hooks/useTime';
+import { useTodosR } from '../../hooks/useTodosR';
 import './Stats.css';
 
 export const StatsR = () => {
+    const { data, isLoading } = useTime();
+    const { data: todos } = useTodosR();
+
+    if (isLoading) {
+        return <span>Загрузка</span>;
+    }
+
+    const dateNow = data ? data.toLocaleDateString() : '--';
+    const timeNow = data ? new Date().toLocaleTimeString() : '--';
+    const completedTodo = todos.filter((todo) => todo.completed === true);
+    console.log(completedTodo);
+
     return (
         <div className="statsR-container">
             <div>
-                Todo finished: <span className="accent-info">18</span>
+                Выполнено задач:{' '}
+                <span className="accent-info">{completedTodo.length}</span>
             </div>
             <div>
-                Time now: <span className="accent-info">17:10</span>
+                Сегодня: <span className="accent-info">{dateNow}</span>
+            </div>
+            <div>
+                Время: <span className="accent-info">{timeNow}</span>
             </div>
         </div>
     );

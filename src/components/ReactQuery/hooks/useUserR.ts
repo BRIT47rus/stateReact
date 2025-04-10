@@ -23,8 +23,24 @@ const user_MOCK = {
         bs: 'synergize scalable supply-chains',
     },
 };
-export const useUserR = () => {
+export type UserData = {
+    id: number;
+    name: string;
+    email: string;
+    address: { city: string };
+    phone: string;
+    website: string;
+};
+
+type UserReturned = {
+    data: UserData;
+    isLoading: boolean;
+    error: Error | null;
+};
+export const useUserR = (): UserReturned => {
     const { userId } = useUserRContext();
-    const { data } = useRequeredR({ queryKey: [`users/${userId}`] });
-    return data;
+    const { data, isLoading, error } = useRequeredR({
+        queryKey: [`users/${userId}`],
+    });
+    return { data, error, isLoading };
 };
